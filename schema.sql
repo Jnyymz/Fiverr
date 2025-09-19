@@ -33,3 +33,10 @@ CREATE TABLE offers (
     FOREIGN KEY (user_id) REFERENCES fiverr_clone_users(user_id),
     FOREIGN KEY (proposal_id) REFERENCES proposals(proposal_id)
 );
+
+CREATE TABLE categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(255) UNIQUE NOT NULL,
+    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
