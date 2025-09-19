@@ -19,7 +19,9 @@ CREATE TABLE proposals (
     max_price INT,
     view_count INT DEFAULT 0,
     date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES fiverr_clone_users(user_id)
+    category_id INT NULL,
+    FOREIGN KEY (user_id) REFERENCES fiverr_clone_users(user_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE SET NULL
 );
 
 CREATE TABLE offers (
